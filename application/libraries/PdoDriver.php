@@ -24,8 +24,27 @@ class PdoDriver implements IDriver{
         // TODO: Implement find() method.
     }
 
+    public function insert($table, $data)
+    {
+        // TODO: Implement insert() method.
+    }
+
+    public function update($table, $data, $condition, $comparator = 'AND')
+    {
+        // TODO: Implement update() method.
+    }
+
+    public function delete($table, $id)
+    {
+        // TODO: Implement delete() method.
+    }
+
     public function __destruct()
     {
        $this->connection=null;
     }
 }
+
+//prepare($query)
+//execute($data)
+//setFetchMode(PDO::FETCH_CLASS, $model);

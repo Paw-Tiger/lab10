@@ -19,14 +19,41 @@ try{
 
     $testFind = $MySQLi->find('employees',2);
     $testFindAll = $MySQLi->find('employees');
-    var_dump($MySQLi);
-    var_dump($testFind);
-    var_dump($testFindAll);
+    $data = [
+        'firstname'=>'Petro',
+        'lastname'=>'Petrovich',
+        'title'=>'Secretary',
+        'age'=>30,
+        'salary'=>10000,
+    ];
+    $condition = [
+        'id'=>11
+    ];
+//    $insert = $MySQLi->insert(
+//        'employees',
+//        $data
+//    );
+//    var_dump($insert);
+    $update = $MySQLi->update(
+        'employees',
+        $data,
+        $condition
+    );
+
+    $delete = $MySQLi->delete(
+        'employees',
+        111
+    );
+
+    var_dump($delete);
+//    var_dump($testFind);
+//    var_dump($testFindAll);
 
 }catch (Exception $exception){
     $e->getMessage();
 }
 
-$Pdo = new PdoDriver($config['host'],$config['dbname'],$config['username'],$config['password']);
 
-var_dump($Pdo);
+//$Pdo = new PdoDriver($config['host'],$config['dbname'],$config['username'],$config['password']);
+//
+//var_dump($Pdo);
